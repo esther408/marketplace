@@ -54,7 +54,8 @@
               <h4 class="mb-2">Welcome to market place! 👋</h4>
               <p class="mb-4">Please sign-in to your account and start the adventure</p>
 
-              <form id="formAuthentication" class="mb-3" action="index.html" method="POST">
+              <form id="formAuthentication" class="mb-3" action="{{route('login')}}" method="POST">
+                @csrf
                 <div class="mb-3">
                   <label for="email" class="form-label">Email or Username</label><br>
                   <input
@@ -72,7 +73,7 @@
                     <a href="/for">
                       <small>Forgot Password?</small><br>
                     </a>
-                    <a href="/home">dashboard</a>
+                   
                   </div>
                   <div class="input-group input-group-merge">
                     <input

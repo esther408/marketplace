@@ -499,14 +499,13 @@
     margin-top: 30vh;
     margin-left: 69vh;
     padding: 5rem;
-    background-color: rgb(245, 250, 248);
+    background-color: rgb(124, 230, 198);
     text-align: center;
-    width: 23rem;
-    height: 23rem;
+    width: 15rem;
+    height: 16rem;
     color: rgb(26, 23, 23);
     border-radius: 5rem;
-    font-size:15px;
     font-variant: small-caps;
-    box-shadow: 20px 20px 20px rgb(14, 73, 47);
+    box-shadow: 2px 2px 2px 2px rgb(7, 7, 7);
     
 }
