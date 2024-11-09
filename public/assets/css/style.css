@@ -496,16 +496,75 @@
 /*** Footer End ***/
 
 .card-body{
-    margin-top: 30vh;
+    margin-top: 20vh;
     margin-left: 69vh;
     padding: 5rem;
-    background-color: rgb(124, 230, 198);
+    background-color: rgb(255, 255, 255);
     text-align: center;
     width: 15rem;
     height: 16rem;
-    color: rgb(26, 23, 23);
+    color: rgb(10, 168, 18);
     border-radius: 5rem;
-    font-variant: small-caps;
     box-shadow: 2px 2px 2px 2px rgb(7, 7, 7);
     
+}
+.form-head{
+    margin-top: -39px;
+}
+.btn-primary{
+     background-color: rgba(15, 221, 43, 0.836);
+     width: 18vh;
+     height: 30px;
+     margin-top: none;
+     margin-left: none;
+     margin-right: none;
+     margin-bottom: none;
+     border-radius: 13px;
+     grid-area: none;
+}
+input{
+    background-color: rgb(242, 248, 246);
+     width: 18vh;
+     height: 23px;
+     margin-top: none;
+     margin-left: none;
+     margin-right: none;
+     margin-bottom: none;
+     border-radius: 5px;
+}
+.form-check-input{
+  height: auto;
+
+}
+.btn-primary:hover{
+    background-color: rgba(250, 246, 4, 0.856);
+    width: 18vh;
+    height: 30px;
+    margin-top: none;
+    margin-left: none;
+    margin-right: none;
+    margin-bottom: none;
+    border-radius: 13px;
+    grid-area: none;
+}
+body{
+    background-image:image-set(url(../img/hero-img.jpg));
+}
+.form-head2{
+    margin-top: -39px;
+}
+.card-body2{
+    margin-top: 20vh;
+    margin-left: 69vh;
+    padding: 5rem;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    width: 15rem;
+    height: 20rem;
+    color: rgb(10, 168, 18);
+    border-radius: 5rem;
+    box-shadow: 2px 2px 2px 2px rgb(7, 7, 7);
+}
+.link{
+    color: rgb(0, 25, 250);
 }

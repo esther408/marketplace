@@ -62,7 +62,7 @@
                 <button class="btn btn-primary d-grid w-100">Send Reset Link</button>
               </form>
               <div class="text-center">
-                <a href="/" class="d-flex align-items-center justify-content-center">
+                <a href="/" class="link">
                   <i class="bx bx-chevron-left scaleX-n1-rtl bx-sm"></i>
                   Back to login
                 </a>

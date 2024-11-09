@@ -39,7 +39,7 @@
     
   </head>
 
-  <body bgcolor="white">
+  <body background-image="public/assets/img/hero-img-2.jpg" >
     <!-- Content -->
 
     <div class="container-xxl">
@@ -49,10 +49,10 @@
           <div class="card">
        
             <div class="card-body">
-              <img src="public/assets/img/ape.png" alt="">
+              <div class="form-head">
+              
               <h1>LOGIN HERE</h1>
               <h4 class="mb-2">Welcome to market place! 👋</h4>
-              <p class="mb-4">Please sign-in to your account and start the adventure</p>
 
               <form id="formAuthentication" class="mb-3" action="{{route('login')}}" method="POST">
                 @csrf
@@ -70,7 +70,7 @@
                 <div class="mb-3 form-password-toggle">
                   <div class="d-flex justify-content-between">
                     <label class="form-label" for="password">Password</label><br>
-                    <a href="/for">
+                    <a href="/for" class="link">
                       <small>Forgot Password?</small><br>
                     </a>
                    
@@ -87,24 +87,27 @@
                     <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                   </div>
                 </div>
-                <div class="mb-3">
+                <div class="mb-2">
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="remember-me" />
                     <label class="form-check-label" for="remember-me"> Remember Me </label><br>
                   </div>
                 </div>
-                <div class="mb-3">
-                  <button class="btn btn-primary d-grid w-100" type="submit">Sign in</button>
-                </div>
+                
+                  <button class="btn-primary" type="submit">Sign in</button>
+               
               </form>
 
               <p class="text-center">
                 <span>New on our platform?</span><br>
-                <a href="/register">
+                <a href="/register" class="link">
                   <span>Create an account</span>
                 </a>
+                <a href="/home" class="link">
+                  <span>dashboard</span>
+                </a>
               </p>
-            </div>
+              </div></div>
           </div>
           <!-- /Register -->
         </div>
