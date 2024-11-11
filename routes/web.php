@@ -22,6 +22,11 @@ route::get('/for',function()
     return view('auth.passwords.for');
 }
 );
+route::get('/dashboard',function()
+{
+    return view('home');
+}
+);
 
 Route::post('/', [loginController::class, 'login'])->name('login');
 Route::post('/register', [RegisterUserController::class, 'store'])->name('register');

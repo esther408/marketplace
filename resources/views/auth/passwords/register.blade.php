@@ -38,17 +38,17 @@
     @csrf
         <div class="card">
             <div class="text-center mb-5">
-                <a class="header-brand" href="index-2.html"><i class="fa fa-soccer-ball-o brand-logo"></i></a>
+                <a class="header-brand" href="/"><i class="fa fa-soccer-ball-o brand-logo"></i></a>
             </div>
             <div class="card-body">
                 <div class="card-title">Create new account</div>
                 <div class="form-group">
                     <label class="form-label">firstname</label>
-                    <input type="text" class="form-control" placeholder="Enter name" name="firstname">
+                    <input type="text" value="{{ old('firstname')}}" class="form-control" placeholder="Enter name" name="firstname">
                 </div>
                 <div class="form-group">
                     <label class="form-label">lastname</label>
-                    <input type="text" class="form-control" placeholder="Enter name" name="lastname">
+                    <input type="text" value="{{ old('lastname')}}" class="form-control" placeholder="Enter name" name="lastname">
                 </div>
                 <div class="form-group">
         <label for="role">Role</label>
@@ -61,15 +61,15 @@
     </div>
                 <div class="form-group">
                     <label class="form-label">Email address</label>
-                    <input type="email" class="form-control" placeholder="Enter email" name="email">
+                    <input value="{{ old('email')}}" type="email" class="form-control" placeholder="Enter email" name="email">
                 </div>
                 <div class="form-group">
                     <label class="form-label">Password</label>
-                    <input type="password" class="form-control" placeholder="Password" name="paasword">
+                    <input type="password" class="form-control" placeholder="Password" name="password" required>
                 </div>
                 <div class="form-group">
-                    <label class="form-label">comfirm Password</label>
-                    <input type="password" class="form-control" placeholder="comfirm_Password" name="comfirm_password">
+                    <label class="form-label">confirm Password</label>
+                    <input type="password" class="form-control" placeholder="confirm Password" name="password_confirmation" required>
                 </div>
                 <div class="form-group">
                     <label class="custom-control custom-checkbox">
