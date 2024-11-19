@@ -14,7 +14,7 @@ public function store(Request $request)
     $request->validate([
         'firstname' => 'required|string|max:255',
         'lastname' => 'required|string|max:255',
-        'role' => 'required|in:farmer,buyer,expert,driver',
+        'role' => 'required|in:farmer,buyer,expert,driver,admin',
         'email' => 'required|string|email|max:255|unique:users',
         'password' => 'required|string|confirmed|min:8',
     ]);

@@ -34,6 +34,11 @@
     <div>{{ session('success') }}</div>
 @endif
 </div>
+<div class="">
+    @if(session('fail'))
+    <div>{{ session('fail') }}</div>
+@endif
+</div>
     <form action="{{route('register')}}" method="post">
     @csrf
         <div class="card">
@@ -57,6 +62,7 @@
             <option value="buyer">Buyer</option>
             <option value="expert">Expert</option>
             <option value="driver">Driver</option>
+            <option value="Admin">Admin</option>
         </select>
     </div>
                 <div class="form-group">

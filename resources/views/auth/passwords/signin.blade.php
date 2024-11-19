@@ -38,15 +38,6 @@
                     </div>
                     <div class="card-body">
                         <div class="card-title">Login to your account</div>
-                        <div class="form-group">
-                            <label for="role">Role</label>
-                            <select id="role" name="role" required>
-                                <option value="farmer">Farmer</option>
-                                <option value="buyer">Buyer</option>
-                                <option value="expert">Expert</option>
-                                <option value="driver">Driver</option>
-                            </select>
-                        </div>
                         @if($errors->any())
                         <ul>
                             @foreach($errors->all() as $error)

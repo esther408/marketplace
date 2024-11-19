@@ -12,10 +12,10 @@ class logincontroller extends Controller
     $request->validate([
         'email' => 'required|email',
         'password' => 'required',
-        'role' => 'required|in:farmer,buyer,expert,driver',
+       
     ]);
 
-    $credentials = $request->only('email', 'password', 'role');
+    $credentials = $request->only('email', 'password',);
 
     if (Auth::attempt($credentials)) {
         // Authentication passed...
