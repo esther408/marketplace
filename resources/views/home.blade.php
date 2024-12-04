@@ -294,17 +294,17 @@
     </div>
 
     <div id="left-sidebar" class="sidebar ">
-        <h5 class="brand-name">Soccer <a href="javascript:void(0)" class="menu_option float-right"><i class="icon-grid font-16" data-toggle="tooltip" data-placement="left" title="Grid & List Toggle"></i></a></h5>
+        <h5 class="brand-name">INUMA CONNECT <a href="javascript:void(0)" class="menu_option float-right"><i class="icon-grid font-16" data-toggle="tooltip" data-placement="left" title="Grid & List Toggle"></i></a></h5>
         <nav id="left-sidebar-nav" class="sidebar-nav">
             <ul class="metismenu">
                 <li class="g_heading">Project</li>
-                <li class="active"><a href="index-2.html"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>                        
-                <li><a href="project-list.html"><i class="fa fa-list-ol"></i><span>Project list</span></a></li>
-                <li><a href="project-taskboard.html"><i class="fa fa-calendar-check-o"></i><span>Taskboard</span></a></li>
-                <li><a href="project-ticket.html"><i class="fa fa-list-ul"></i><span>Ticket List</span></a></li>
-                <li><a href="project-ticket-details.html"><i class="icon-tag"></i><span>Ticket Details</span></a></li>
-                <li><a href="project-clients.html"><i class="fa fa-user"></i><span>Clients</span></a></li>
-                <li><a href="project-todo.html"><i class="fa fa-check-square-o"></i><span>Todo List</span></a></li>
+                                       
+                <li><a href="/farmer"><i class="fa fa-user"></i><span>Farmers</span></a></li>
+                <li><a href="project-taskboard.html"><i class="fa fa-calendar-check-o"></i><span>Buyers</span></a></li>
+
+
+                <li><a href="project-ticket-details.html"><i class="icon-tag"></i><span>Expert</span></a></li>
+       
                 <li class="g_heading">App</li>
                 <li><a href="app-calendar.html"><i class="fa fa-calendar"></i><span>Calendar</span></a></li>
                 <li><a href="app-chat.html"><i class="fa fa-comments"></i><span>Chat</span></a></li>
@@ -450,7 +450,11 @@
                                     <a class="dropdown-item" href="javascript:void(0)"><i class="dropdown-icon fe fe-send"></i> Message</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="javascript:void(0)"><i class="dropdown-icon fe fe-help-circle"></i> Need help?</a>
-                                    <a class="dropdown-item" href="login.html"><i class="dropdown-icon fe fe-log-out"></i> Sign out</a>
+                                    <a class="dropdown-item" href="#!" onclick="document.getElementById('logout-form').submit()">
+                                        <i class="dropdown-icon fe fe-log-out"></i> 
+                                        Sign out
+                                    </a>
+                                    <form action="{{ route('logout') }}" id="logout-form" method="post">@csrf</form>
                                 </div>
                             </div>
                         </div>
@@ -458,32 +462,30 @@
                 </div>
             </div>
         </div>
-        <div class="section-body mt-3">
-            <div class="container-fluid">
-                <div class="row clearfix">
+        <div class="row clearfix">
                     <div class="col-lg-12">
                         <div class="mb-4">
-                            <h4>Welcome to market place!</h4>
+                            <h4>Welcome Markert Place!</h4>
                             <small>Measure How Fast You’re Growing Monthly Recurring Revenue. <a href="#">Learn More</a></small>
                         </div>                        
                     </div>
                 </div>
-                <div class="row clearfix row-deck">
+                <div class="row clearfix row-deck ml-4">
                     <div class="col-xl-2 col-lg-4 col-md-6">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Active Cases</h3>
+                                <h3 class="card-title">Users</h3>
                             </div>
                             <div class="card-body">
                                 <h5 class="number mb-0 font-32 counter">31</h5>
-                                <span class="font-12">Measure How Fast... <a href="#">More</a></span>
+                                <span class="font-12">Measure How Fast... <a href="login">More</a></span>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-2 col-lg-4 col-md-6">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Pending Tasks</h3>
+                                <h3 class="card-title">orders</h3>
                             </div>
                             <div class="card-body">
                                 <h5 class="number mb-0 font-32 counter">245</h5>
@@ -491,43 +493,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-2 col-lg-4 col-md-6">
+                    
+                
+               
+                    <div class="col-xl-2 col-lg-4 col-md-6 ">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Upcoming Events</h3>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="number mb-0 font-32 counter">17</h5>
-                                <span class="font-12">Measure How Fast... <a href="#">More</a></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-4 col-md-6">
-                        <div class="card">
-                            <div class="card-header">
-                                <h3 class="card-title">New Message</h3>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="number mb-0 font-32 counter">12</h5>
-                                <span class="font-12">Measure How Fast... <a href="#">More</a></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-4 col-md-6">
-                        <div class="card">
-                            <div class="card-header">
-                                <h3 class="card-title">Open Requests</h3>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="number mb-0 font-32 counter">19</h5>
-                                <span class="font-12">Measure How Fast... <a href="#">More</a></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-4 col-md-6">
-                        <div class="card">
-                            <div class="card-header">
-                                <h3 class="card-title">Hours Spent</h3>
+                                <h3 class="card-title">products</h3>
                             </div>
                             <div class="card-body">
                                 <h5 class="number mb-0 font-32 counter">284</h5>
@@ -536,114 +508,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="row clearfix row-deck">
-                    <div class="col-xl-12 col-lg-12">
-                        <div class="card3">
-                           
-                            <div class="card-body">
-                               
-                            </div>
-                        </div>                
-                    </div>
-                   
-                    <div class="col-xl-4 col-lg-12">
-                        <div class="card2">
-                            <div class="card-header">!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Statistics</h3>
-                                <div class="card-options">
-                                    <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
-                                    <a href="#" class="card-options-fullscreen" data-toggle="card-fullscreen"><i class="fe fe-maximize"></i></a>
-                                    <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <div class="row text-center">
-                                    <div class="col-4 border-right pb-4 pt-4">
-                                        <label class="mb-0 font-13">Total Project</label>
-                                        <h4 class="font-30 font-weight-bold text-col-blue counter">42</h4>
-                                    </div>
-                                    <div class="col-4 border-right pb-4 pt-4">
-                                        <label class="mb-0 font-13">On Going</label>
-                                        <h4 class="font-30 font-weight-bold text-col-blue counter">23</h4>
-                                    </div>
-                                    <div class="col-4 pb-4 pt-4">
-                                        <label class="mb-0 font-13">Pending</label>
-                                        <h4 class="font-30 font-weight-bold text-col-blue counter">8</h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="table-responsive">
-                                <table class="table table-striped table-vcenter mb-0">
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <div class="clearfix">
-                                                    <div class="float-left"><strong>35%</strong></div>
-                                                    <div class="float-right"><small class="text-muted">Design Team</small></div>
-                                                </div>
-                                                <div class="progress progress-xs">
-                                                    <div class="progress-bar bg-azure" role="progressbar" style="width: 35%" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="clearfix">
-                                                    <div class="float-left"><strong>25%</strong></div>
-                                                    <div class="float-right"><small class="text-muted">Developer Team</small></div>
-                                                </div>
-                                                <div class="progress progress-xs">
-                                                    <div class="progress-bar bg-green" role="progressbar" style="width: 25%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="clearfix">
-                                                    <div class="float-left"><strong>15%</strong></div>
-                                                    <div class="float-right"><small class="text-muted">Marketing</small></div>
-                                                </div>
-                                                <div class="progress progress-xs">
-                                                    <div class="progress-bar bg-orange" role="progressbar" style="width: 15%" aria-valuenow="36" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="clearfix">
-                                                    <div class="float-left"><strong>20%</strong></div>
-                                                    <div class="float-right"><small class="text-muted">Management</small></div>
-                                                </div>
-                                                <div class="progress progress-xs">
-                                                    <div class="progress-bar bg-indigo" role="progressbar" style="width: 20%" aria-valuenow="6" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="clearfix">
-                                                    <div class="float-left"><strong>11%</strong></div>
-                                                    <div class="float-right"><small class="text-muted">Other</small></div>
-                                                </div>
-                                                <div class="progress progress-xs">
-                                                    <div class="progress-bar bg-pink" role="progressbar" style="width: 11%" aria-valuenow="6" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="section-body">
             <div class="container-fluid">
                 <div class="row clearfix row-deck">
                     <div class="col-xl-4 col-lg-12 col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Transaction History</h3>
+                                <h3 class="card-title">transactoin history</h3>
                                 <div class="card-options">
                                     <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
                                     <div class="item-action dropdown ml-2">
@@ -873,7 +744,7 @@
                         </div>
                     </div>
                 </div>    
-                <div class="row clearfix">
+                 <div class="row clearfix">
                     <div class="col-12 col-sm-12">
                         <div class="card">
                             <div class="card-header">

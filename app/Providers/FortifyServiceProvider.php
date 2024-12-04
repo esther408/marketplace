@@ -7,6 +7,7 @@ use App\Actions\Fortify\ResetUserPassword;
 use App\Actions\Fortify\UpdateUserPassword;
 use App\Actions\Fortify\UpdateUserProfileInformation;
 use Illuminate\Cache\RateLimiting\Limit;
+use Laravel\Fortify\Contracts\RegisterViewResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\ServiceProvider;
@@ -20,7 +21,9 @@ class FortifyServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        Fortify::registerView(function () {
+            return view('auth.passwords.register'); // Reba niba iyi view ihari
+        });
     }
 
     /**
@@ -45,7 +48,7 @@ class FortifyServiceProvider extends ServiceProvider
         
 
         Fortify::loginView(function () {
-            return view('auth.signin');
+            return view('auth.passwords.signin');
         });
     }
 }

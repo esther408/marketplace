@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en" dir="ltr">
 
-<!-- soccer/project/  07 Jan 2020 03:36:49 GMT -->
+<!-- soccer/project/index.html  07 Jan 2020 03:37:47 GMT -->
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -12,14 +12,14 @@
 <title>:: Soccer :: Project Dashboard</title>
 
 <!-- Bootstrap Core and vandor -->
-<link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="{{ asset('assets/plugins/bootstrap/css/bootstrap.min.css')}}" />
 
 <!-- Plugins css -->
-<link rel="stylesheet" href="assets/plugins/charts-c3/c3.min.css"/>
+<link rel="stylesheet" href="{{ asset('assets/plugins/charts-c3/c3.min.css')}}"/>
 
 <!-- Core css -->
-<link rel="stylesheet" href="assets/css/main.css"/>
-<link rel="stylesheet" href="assets/css/theme1.css"/>
+<link rel="stylesheet" href="{{ asset('assets/css/main.css')}}"/>
+<link rel="stylesheet" href="{{ asset('assets/css/theme1.css')}}"/>
 </head>
 
 <body class="font-montserrat">
@@ -200,15 +200,15 @@
                 <ul class="list-group list-unstyled">
                     <li class="list-group-item mb-2">
                         <p>Default Theme</p>
-                        <a href="index-2.html"><img src="assets/images/themes/default.png" class="img-fluid" /></a>
+                        <a href="index-2.html"><img src="{{ asset('assets/images/themes/default.png')}}" class="img-fluid" /></a>
                     </li>
                     <li class="list-group-item mb-2">
                         <p>Night Mode Theme</p>
-                        <a href="project-dark/index.html"><img src="assets/images/themes/dark.png" class="img-fluid" /></a>
+                        <a href="project-dark/index.html"><img src="{{ asset('assets/images/themes/dark.png')}}" class="img-fluid" /></a>
                     </li>                    
                     <li class="list-group-item mb-2">
                         <p>RTL Version</p>
-                        <a href="project-rtl/index.html"><img src="assets/images/themes/rtl.png" class="img-fluid" /></a>
+                        <a href="project-rtl/index.html"><img src="{{ asset('assets/images/themes/rtl.png')}}" class="img-fluid" /></a>
                     </li>
                 </ul>
             </div>
@@ -259,10 +259,10 @@
                         <h3>Developer Team</h3>
                         <h4>Hangouts</h4>
                         <ul class="list-unstyled team-info margin-0 p-t-5">                                            
-                            <li><img src="assets/images/xs/avatar1.jpg" alt="Avatar"></li>
-                            <li><img src="assets/images/xs/avatar2.jpg" alt="Avatar"></li>
-                            <li><img src="assets/images/xs/avatar3.jpg" alt="Avatar"></li>
-                            <li><img src="assets/images/xs/avatar4.jpg" alt="Avatar"></li>                                            
+                            <li><img src="{{ asset('assets/images/xs/avatar1.jpg')}}" alt="Avatar"></li>
+                            <li><img src="{{ asset('assets/images/xs/avatar2.jpg')}}" alt="Avatar"></li>
+                            <li><img src="{{ asset('assets/images/xs/avatar3.jpg')}}" alt="Avatar"></li>
+                            <li><img src="{{ asset('assets/images/xs/avatar4.jpg')}}" alt="Avatar"></li>                                            
                         </ul>
                     </div>
                 </li>
@@ -346,11 +346,11 @@
                             <div class="dropdown d-flex">
                                 <a class="nav-link icon d-none d-md-flex btn btn-default btn-icon ml-2" data-toggle="dropdown"><i class="fa fa-language"></i></a>
                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                    <a class="dropdown-item" href="#"><img class="w20 mr-2" src="assets/images/flags/us.svg">English</a>
+                                    <a class="dropdown-item" href="#"><img class="w20 mr-2" src="{{ asset('assets/images/flags/us.svg')}}">English</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#"><img class="w20 mr-2" src="assets/images/flags/es.svg">Spanish</a>
-                                    <a class="dropdown-item" href="#"><img class="w20 mr-2" src="assets/images/flags/jp.svg">japanese</a>
-                                    <a class="dropdown-item" href="#"><img class="w20 mr-2" src="assets/images/flags/bl.svg">France</a>
+                                    <a class="dropdown-item" href="#"><img class="w20 mr-2" src="{{ asset('assets/images/flags/es.svg')}}">Spanish</a>
+                                    <a class="dropdown-item" href="#"><img class="w20 mr-2" src="{{ asset('assets/images/flags/jp.svg')}}">japanese</a>
+                                    <a class="dropdown-item" href="#"><img class="w20 mr-2" src="{{ asset('assets/images/flags/bl.svg')}}">France</a>
                                 </div>
                             </div>
                             <div class="dropdown d-flex">
@@ -359,7 +359,7 @@
                                     <ul class="right_chat list-unstyled w350 p-0">
                                         <li class="online">
                                             <a href="javascript:void(0);" class="media">
-                                                <img class="media-object" src="assets/images/xs/avatar4.jpg" alt="">
+                                                <img class="media-object" src="{{asset('assets/images/xs/avatar4.jpg')}}" alt="">
                                                 <div class="media-body">
                                                     <span class="name">Donald Gardner</span>
                                                     <div class="message">It is a long established fact that a reader</div>
@@ -370,7 +370,8 @@
                                         </li>
                                         <li class="online">
                                             <a href="javascript:void(0);" class="media">
-                                                <img class="media-object " src="assets/images/xs/avatar5.jpg" alt="">
+                                                <img class="media-object " src="{{asset('assets/images/xs/avatar5.jpg')}}
+                                                " alt="">
                                                 <div class="media-body">
                                                     <span class="name">Wendy Keen</span>
                                                     <div class="message">There are many variations of passages of Lorem Ipsum</div>
@@ -381,7 +382,8 @@
                                         </li>
                                         <li class="offline">
                                             <a href="javascript:void(0);" class="media">
-                                                <img class="media-object " src="assets/images/xs/avatar2.jpg" alt="">
+                                                <img class="media-object " src="{{asset('assets/images/xs/avatar2.jpg')}}
+                                                " alt="">
                                                 <div class="media-body">
                                                     <span class="name">Matt Rosales</span>
                                                     <div class="message">Contrary to popular belief, Lorem Ipsum is not simply</div>
@@ -392,7 +394,8 @@
                                         </li>
                                         <li class="online">
                                             <a href="javascript:void(0);" class="media">
-                                                <img class="media-object " src="assets/images/xs/avatar3.jpg" alt="">
+                                                <img class="media-object " src="assets/images/xs/avatar3.jpg')}}
+                                                " alt="">
                                                 <div class="media-body">
                                                     <span class="name">Phillip Smith</span>
                                                     <div class="message">It has roots in a piece of classical Latin literature from 45 BC</div>
@@ -766,35 +769,40 @@
                             <table class="table card-table mt-2">
                                 <tbody>
                                     <tr>
-                                        <td class="w60"><img class="avatar" src="assets/images/xs/avatar1.jpg" alt="Avatar"></td>
+                                        <td class="w60"><img class="avatar" src="{{asset('assets/images/xs/avatar1.jpg')}}
+                                        " alt="Avatar"></td>
                                         <td>
                                             <p class="mb-0 d-flex justify-content-between"><span>Payment from #2583</span> <strong>$300</strong></p>
                                             <span class="text-muted font-13">Feb 21, 2019</span>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="w60"><img class="avatar" src="assets/images/xs/avatar2.jpg" alt="Avatar"></td>
+                                        <td class="w60"><img class="avatar" src="{{asset('assets/images/xs/avatar2.jpg')}}
+                                        " alt="Avatar"></td>
                                         <td>
                                             <p class="mb-0 d-flex justify-content-between"><span>Payment from #1245</span> <strong>$1200</strong></p>
                                             <span class="text-muted font-13">March 14, 2019</span>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="w60"><img class="avatar" src="assets/images/xs/avatar3.jpg" alt="Avatar"></td>
+                                        <td class="w60"><img class="avatar" src="{{asset('assets/images/xs/avatar3.jpg')}}
+                                        " alt="Avatar"></td>
                                         <td>
                                             <p class="mb-0 d-flex justify-content-between"><span>Payment from #8596</span> <strong>$780</strong></p>
                                             <span class="text-muted font-13">March 18, 2019</span>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="w60"><img class="avatar" src="assets/images/xs/avatar4.jpg" alt="Avatar"></td>
+                                        <td class="w60"><img class="avatar" src="assets/images/xs/avatar4.jpg')}}
+                                        " alt="Avatar"></td>
                                         <td>
                                             <p class="mb-0 d-flex justify-content-between"><span>Payment from #1526</span> <strong>$841</strong></p>
                                             <span class="text-muted font-13">April 27, 2019</span>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="w60"><img class="avatar" src="assets/images/xs/avatar5.jpg" alt="Avatar"></td>
+                                        <td class="w60"><img class="avatar" src="{{asset('assets/images/xs/avatar5.jpg')}}
+                                        " alt="Avatar"></td>
                                         <td>
                                             <p class="mb-0 d-flex justify-content-between"><span>Payment from #4859</span> <strong>$235</strong></p>
                                             <span class="text-muted font-13">March 18, 2019</span>
@@ -1001,10 +1009,14 @@
                                                 <td>Sean Black</td>
                                                 <td>
                                                     <ul class="list-unstyled team-info sm margin-0 w150">
-                                                        <li><img src="assets/images/xs/avatar1.jpg" alt="Avatar"></li>
-                                                        <li><img src="assets/images/xs/avatar2.jpg" alt="Avatar"></li>
-                                                        <li><img src="assets/images/xs/avatar3.jpg" alt="Avatar"></li>
-                                                        <li><img src="assets/images/xs/avatar4.jpg" alt="Avatar"></li>
+                                                        <li><img src="{{asset('assets/images/xs/avatar1.jpg')}}
+                                                        " alt="Avatar"></li>
+                                                        <li><img src="{{asset('assets/images/xs/avatar2.jpg')}}
+                                                        " alt="Avatar"></li>
+                                                        <li><img src="{{asset('assets/images/xs/avatar3.jpg')}}
+                                                        " alt="Avatar"></li>
+                                                        <li><img src="{{asset('assets/images/xs/avatar4.jpg')}}
+                                                        " alt="Avatar"></li>
                                                         <li class="ml-2"><span>2+</span></li>
                                                     </ul>
                                                 </td>
@@ -1018,10 +1030,14 @@
                                                 <td>Sean Black</td>
                                                 <td>
                                                     <ul class="list-unstyled team-info sm margin-0 w150">
-                                                        <li><img src="assets/images/xs/avatar1.jpg" alt="Avatar"></li>
-                                                        <li><img src="assets/images/xs/avatar2.jpg" alt="Avatar"></li>
-                                                        <li><img src="assets/images/xs/avatar3.jpg" alt="Avatar"></li>
-                                                        <li><img src="assets/images/xs/avatar4.jpg" alt="Avatar"></li>
+                                                        <li><img src="{{asset('assets/images/xs/avatar1.jpg')}}
+                                                        " alt="Avatar"></li>
+                                                        <li><img src="{{asset('assets/images/xs/avatar2.jpg')}}
+                                                        " alt="Avatar"></li>
+                                                        <li><img src="{{asset('assets/images/xs/avatar3.jpg')}}
+                                                        " alt="Avatar"></li>
+                                                        <li><img src="{{asset('assets/images/xs/avatar4.jpg')}}
+                                                        " alt="Avatar"></li>
                                                         <li class="ml-2"><span>2+</span></li>
                                                     </ul>
                                                 </td>
@@ -1035,8 +1051,10 @@
                                                 <td>Merri Diamond</td>
                                                 <td>
                                                     <ul class="list-unstyled team-info sm margin-0 w150">
-                                                        <li><img src="assets/images/xs/avatar1.jpg" alt="Avatar"></li>
-                                                        <li><img src="assets/images/xs/avatar2.jpg" alt="Avatar"></li>
+                                                        <li><img src="{{asset('assets/images/xs/avatar1.jpg')}}
+                                                        " alt="Avatar"></li>
+                                                        <li><img src="{{asset('assets/images/xs/avatar2.jpg')}}
+                                                        " alt="Avatar"></li>
                                                     </ul>
                                                 </td>
                                                 <td>One page html Admin</td>
@@ -1049,10 +1067,14 @@
                                                 <td>Sean Black</td>
                                                 <td>
                                                     <ul class="list-unstyled team-info sm margin-0 w150">
-                                                        <li><img src="assets/images/xs/avatar1.jpg" alt="Avatar"></li>
-                                                        <li><img src="assets/images/xs/avatar2.jpg" alt="Avatar"></li>
-                                                        <li><img src="assets/images/xs/avatar3.jpg" alt="Avatar"></li>
-                                                        <li><img src="assets/images/xs/avatar4.jpg" alt="Avatar"></li>
+                                                        <li><img src="{{asset('assets/images/xs/avatar1.jpg')}}
+                                                        " alt="Avatar"></li>
+                                                        <li><img src="{{asset('assets/images/xs/avatar2.jpg')}}
+                                                        " alt="Avatar"></li>
+                                                        <li><img src="{{asset('assets/images/xs/avatar3.jpg')}}
+                                                        " alt="Avatar"></li>
+                                                        <li><img src="{{asset('assets/images/xs/avatar4.jpg')}}
+                                                        " alt="Avatar"></li>
                                                     </ul>
                                                 </td>
                                                 <td>Wordpress One page</td>
@@ -1065,10 +1087,14 @@
                                                 <td>Allen Collins</td>
                                                 <td>
                                                     <ul class="list-unstyled team-info sm margin-0 w150">
-                                                        <li><img src="assets/images/xs/avatar1.jpg" alt="Avatar"></li>
-                                                        <li><img src="assets/images/xs/avatar2.jpg" alt="Avatar"></li>
-                                                        <li><img src="assets/images/xs/avatar3.jpg" alt="Avatar"></li>
-                                                        <li><img src="assets/images/xs/avatar4.jpg" alt="Avatar"></li>
+                                                        <li><img src="{{asset('assets/images/xs/avatar1.jpg')}}
+                                                        " alt="Avatar"></li>
+                                                        <li><img src="{{asset('assets/images/xs/avatar2.jpg')}}
+                                                        " alt="Avatar"></li>
+                                                        <li><img src="{{asset('assets/images/xs/avatar3.jpg')}}
+                                                        " alt="Avatar"></li>
+                                                        <li><img src="{{asset('assets/images/xs/avatar4.jpg')}}
+                                                        " alt="Avatar"></li>
                                                         <li class="ml-2"><span>2+</span></li>
                                                     </ul>
                                                 </td>
@@ -1091,7 +1117,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-6 col-sm-12">
-                            <a href="templateshub.net">Templates Hub</a>
+                            <a href="templateshub.net"></a>
                         </div>
                         <div class="col-md-6 col-sm-12 text-md-right">
                             <ul class="list-inline mb-0">
@@ -1108,16 +1134,16 @@
 </div>
 
 
-<script src="assets/bundles/lib.vendor.bundle.js"></script>
+<script src="{{ asset('assets/bundles/lib.vendor.bundle.js')}}"></script>
 
-<script src="assets/bundles/apexcharts.bundle.js"></script>
-<script src="assets/bundles/counterup.bundle.js"></script>
-<script src="assets/bundles/knobjs.bundle.js"></script>
-<script src="assets/bundles/c3.bundle.js"></script>
+<script src="{{ asset('assets/bundles/apexcharts.bundle.js')}}"></script>
+<script src="{{ asset('assets/bundles/counterup.bundle.js')}}"></script>
+<script src="{{ asset('assets/bundles/knobjs.bundle.js')}}"></script>
+<script src="{{ asset('assets/bundles/c3.bundle.js')}}"></script>
 
-<script src="assets/js/core.js"></script>
-<script src="assets/js/page/project-index.js"></script>
+<script src="{{ asset('assets/js/core.js')}}"></script>
+<script src="{{ asset('assets/js/page/project-index.js')}}"></script>
 </body>
 
-<!-- soccer/project/  07 Jan 2020 03:37:22 GMT -->
+<!-- soccer/project/index.html  07 Jan 2020 03:37:47 GMT -->
 </html>

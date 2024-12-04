@@ -27,8 +27,13 @@ public function store(Request $request)
         'password' => Hash::make($request->password),
     ]);
 
-    auth()->login($user);
+   $message= auth()->login($user);
 
-    return redirect()->back()->with('success', 'User created successfully!');
+    if ($message) {
+        return redirect()->back()->with('success', 'User created successfully!');
+    }
+    else {
+        return redirect()->back()->with('fail', 'User created fail!');
+    }
 }
 }

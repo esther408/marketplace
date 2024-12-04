@@ -13,14 +13,13 @@ return new class extends Migration
     {
         Schema::create('drivers', function (Blueprint $table) {
             $table->id();
-            $table->foreignid('user_id')->constrained('users','id');
+            $table->foreignId('user_id')->constrained('users','id')->onDelete('cascade');
             $table->string('firstname',45);
             $table->string('lastname',45);
             $table->string('phone',45);
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      */

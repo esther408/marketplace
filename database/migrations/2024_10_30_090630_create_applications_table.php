@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('applications', function (Blueprint $table) {
             $table->id();
             $table->foreignid('farmer_id')->constrained('farmers','id');
-            $table->foreignid('financial_institution_id')->constrained('financial_informations','id');
+            $table->foreignid('financial_informations_id')->constrained('financial_informations','id');
             $table->foreignid('service_id')->constrained('services','id');
             $table->timestamps();
         });

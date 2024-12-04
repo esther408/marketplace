@@ -22,6 +22,9 @@
             font-size: 24px;
             font-weight: bold;
         }
+        .nav{
+            margin: 23px;
+        }
         nav ul {
             list-style: none;
             padding: 0;
@@ -36,7 +39,7 @@
             text-decoration: none;
         }
         .hero {
-            background: #4CAF50;
+            background: #1b6935;
             color: #fff;
             padding: 50px 0;
             text-align: center;
@@ -81,16 +84,23 @@
 </head>
 <body>
     <header>
-        <div class="logo">inumaCONNECT</div>
+        <div class="logo">inumaCONNECT
+            <div class="nav">
         <nav>
+
             <ul>
-                <li><a href="#">Home</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="#">Marketplace</a></li>
+                <li><a href="#">Best Selling</a></li>
+                <li class="nav-item dropdown">
+             
                 <li><a href="#">About Us</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Login/Signup</a></li>
+                <li><a href="#">Support</a></li>
+                <li><a href="#">Best Selling</a></li>
+                <li><a href="/login">Sign Up/Login</a></li>
             </ul>
         </nav>
+        </div></div>
     </header>
 
     <section class="hero">
@@ -99,31 +109,16 @@
         <a href="#" class="btn">Get Started</a>
     </section>
 
-    <section class="features">
-        <h2>Our Key Features</h2>
-        <div class="feature">
-            <h3>Direct Connections</h3>
-            <p>Connect directly with food processors, restaurants, hotels, and butchers.</p>
-        </div>
-        <div class="feature">
-            <h3>Expert Access</h3>
-            <p>Get advice and training from agricultural experts.</p>
-        </div>
-        <div class="feature">
-            <h3>Resources & Support</h3>
-            <p>Access essential resources and stay informed with the latest updates.</p>
-        </div>
-        <div class="feature">
-            <h3>Logistics Solutions</h3>
-            <p>Utilize our delivery services or manage your own transportation.</p>
-        </div>
-    </section>
-
+   
     <section class="how-it-works">
         <h2>How It Works</h2>
         <div class="step">
-            <h3>Step 1: Sign Up</h3>
-            <p>Register on our platform to get started.</p>
+            <p>How This Works:
+ Key Features would appear as a main navigation item with a dropdown menu. This
+dropdown will list specific user categories (Farmers, Buyers, Inputs Providers, etc.),
+allowing visitors to quickly explore tailored features for their needs.
+ Alternatively, you can place Key Features under All Categories if you prefer a more
+streamlined navigation menu.</p>
         </div>
         <div class="step">
             <h3>Step 2: Connect</h3>
@@ -149,5 +144,14 @@
         <p>Contact us: <a href="mailto:contact@inumaconnect.com">contact@inumaconnect.com</a></p>
         <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
     </footer>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
 </body>
 </html>

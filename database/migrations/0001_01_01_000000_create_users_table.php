@@ -16,11 +16,10 @@ return new class extends Migration
             $table->string('firstname',45);
             $table->string('lastname',45);
             $table->string('phone',45);
-            $table->enum('role', ['farmer', 'buyer', 'expert', 'driver']);
+            $table->string('role')->default('buyer');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->rememberToken();
             $table->timestamps();
         });
 

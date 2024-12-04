@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->id();
-            $table->foreignid('financial_institution_id')->constrained('financial_informations','id');
+            $table->foreignid('financial_informations_id')->constrained('financial_informations','id');
             $table->timestamps();
         });
     }

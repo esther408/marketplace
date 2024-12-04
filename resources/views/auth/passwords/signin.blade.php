@@ -27,8 +27,7 @@
     <div class="auth">
 
         <div class="auth_left">
-            <p>"Welcome! Please log in with your username and password to access the system. If you don't have an
-                account, click on the Sign Up link to create a new one."</p>
+            
             <form method="post" action="{{ route('login') }}">
                 @csrf
 
