@@ -11,7 +11,12 @@ class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
-
+     
+      // Add the relationship to ProductListing
+      public function productListings()
+      {
+          return $this->hasMany(ProductListing::class);
+      }
     /**
      * The attributes that are mass assignable.
      *

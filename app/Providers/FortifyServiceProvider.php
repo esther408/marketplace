@@ -25,7 +25,7 @@ class FortifyServiceProvider extends ServiceProvider
             return view('auth.passwords.register'); // Reba niba iyi view ihari
         });
     }
-
+   
     /**
      * Bootstrap any application services.
      */
@@ -45,10 +45,39 @@ class FortifyServiceProvider extends ServiceProvider
         RateLimiter::for('two-factor', function (Request $request) {
             return Limit::perMinute(5)->by($request->session()->get('login.id'));
         });
-        
-
         Fortify::loginView(function () {
             return view('auth.passwords.signin');
         });
+
+         // Customize where the user is redirected after login
+        Fortify::authenticateUsing(function (Request $request) {
+            $credentials = $request->only('email', 'password');
+        
+            if (Auth::attempt($credentials)) {
+                $user = Auth::user();
+        
+
+            /// Redirecting users based on their role
+            if ($user->role === 'farmer') {
+                return redirect()->route('farmer.dashboard');
+            
+            } elseif ($user->role == 'buyer') {
+                return redirect()->route('buyer.dashboard');
+            } elseif ($user->role == 'admin') {
+                return redirect()->route('admin.dashboard');
+            }
+
+            // Default redirect for other users
+            return redirect()->route('home');
+        }
+        return false;
+        });
     }
-}
+
+        // Customize where the user is redirected after login
+        
+   
+       
+    }
+    
+

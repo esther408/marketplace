@@ -1,58 +1,66 @@
 <?php
-
+use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterUserController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FarmerDashboardController;
+use App\Http\Controllers\WeatherController;
+use App\Http\Controllers\SupportController;
 
 
-route::get('/',function()
-{
+// Route for Home
+Route::get('/', function () {
     return view('menu');
-}
-);
-// route::get('/signin',function()
-// {
-//     return view('auth.passwords.signin');
-// }
-// );
-// route::get('/register',function()
-// {
-//     return view('auth.passwords.register');
-// }
-// );
-route::get('/for',function()
-{
+});
+
+// Password Recovery
+Route::get('/for', function () {
     return view('auth.passwords.for');
-}
-);
-route::get('/home',function()
-{
+});
+
+// Home Page
+Route::get('/home', function () {
     return view('home');
-}
-);
-route::get('/farmer',function()
-{
+});
+
+// Farmer Dashboard
+Route::get('/farmer', function () {
     return view('dashboard.farmer');
-}
-);
-
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+});
 
 
+// Registration Routes
 
-// Route::post('/signin', [loginController::class, 'login'])->name('login');
-// Route::post('/register', [RegisterUserController::class, 'store'])->name('register');
-// Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('/register', [RegisterUserController::class, 'showRegistrationForm'])->name('register');
+Route::post('/register', [RegisterUserController::class, 'store'])->name('register.store');
 
-//Route::middleware(['auth', 'admin'])->group(function () {
-   // Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
-  //  Route::resource('/admin/users', AdminUserController::class);
-   // Route::resource('/admin/products', AdminProductController::class);
-   // Route::get('about',function(){  
-  //      return view ('about');
-  //  })->middleware('auth');
- //   Route::get('/admin/reports', [AdminController::class, 'reports'])->name('admin.reports');
-//});
+// Login Route
+Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');  // Show login form
+Route::post('login', [LoginController::class, 'login'])->name('login.store');  // Handle login
+
+Route::get('/login', [AuthenticatedSessionController::class, 'create'])
+    ->middleware(['guest'])
+    ->name('login');
+
+    Route::middleware(['auth', 'role:farmer'])->group(function () {
+        Route::get('/farmer/dashboard', [FarmerDashboardController::class, 'index'])->name('farmer.dashboard');
+        Route::get('/farmer/products', [FarmerProductController::class, 'index'])->name('farmer.products');
+        Route::get('/farmer/add-product', [FarmerProductController::class, 'create'])->name('farmer.add_product');
+        Route::middleware(['auth'])->group(function () {
+            Route::get('/farmer/dashboard', [FarmerDashboardController::class, 'index'])->name('farmer.dashboard');
+        });
+    });
+     //farmer market price
+    Route::middleware(['auth', 'role:farmer'])->group(function () {
+        Route::get('/farmer/market-prices', [MarketPriceController::class, 'index'])->name('farmer.market_prices');
+    });
+    //farmer weather
+    Route::middleware(['auth', 'role:farmer'])->group(function () {
+        Route::get('/farmer/weather', [WeatherController::class, 'index'])->name('farmer.weather');
+    });
+
+    Route::middleware(['auth'])->group(function () {
+        Route::get('/support', [SupportController::class, 'index'])->name('support');
+    });

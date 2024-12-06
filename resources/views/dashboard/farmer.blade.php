@@ -1,120 +1,118 @@
-<!doctype html>
-<html lang="en" dir="ltr">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-<link rel="icon" href="favicon.ico" type="image/x-icon"/>
-<title>:: Farmer Dashboard ::</title>
-
-<!-- Bootstrap Core and Vendor -->
-<link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css" />
-
-<!-- Core css -->
-<link rel="stylesheet" href="assets/css/main.css"/>
-<link rel="stylesheet" href="assets/css/theme1.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                <div class="sidebar-sticky">
+                    <h4 class="text-center mt-3"><div>
+    <h1>Welcome Farmer!</h1>
+    <p>Your ID is: {{ auth()->id() }}</p>
+</div></h4>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">
+                                Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('farmer.products') }}">
+                                My Products
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('farmer.add_product') }}">
+                                Add Product
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('farmer.market_prices') }}">
+                                Market Prices
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('farmer.weather') }}">
+                                Weather Forecast
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('support') }}">
+                                Support
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
 
-<body class="font-montserrat">
-    <div class="container mx-auto">
-        <!-- Farmer Dashboard Header -->
-        <div class="flex justify-between items-center py-4">
-            <h1 class="text-xl font-bold">Farmer Dashboard</h1>
-            <span>Welcome, {{ auth()->user()->name }}</span>
+            <!-- Main Content -->
+            <main class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Welcome, {{ auth()->user()->firstname }}!</h1>
+                </div>
+
+                <!-- Statistics -->
+                <div class="row mb-4">
+    <div class="col-md-4">
+        <div class="card text-white bg-primary">
+            <div class="card-body">
+                <h4 class="card-title">Product Listings</h4>
+                <p class="card-text">You have <strong>{{ $productsCount ?? 0 }}</strong> products listed.</p>
+            </div>
         </div>
-
-        <!-- Crop Information -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <h2 class="font-semibold text-lg">Crops Information</h2>
-                <ul>
-                    <li>Tomatoes: 500kg</li>
-                    <li>Rice: 1000kg</li>
-                    <li>Wheat: 300kg</li>
-                </ul>
-            </div>
-
-            <!-- Farm Inventory -->
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <h2 class="font-semibold text-lg">Farm Inventory</h2>
-                <ul>
-                    <li>Fertilizer: 100kg</li>
-                    <li>Seeds: 50 packets</li>
-                    <li>Tools: 5 items</li>
-                </ul>
-            </div>
-
-            <!-- Financial Overview -->
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <h2 class="font-semibold text-lg">Financial Overview</h2>
-                <div class="flex justify-between">
-                    <span>Income:</span>
-                    <span>Loading...</span>
-                </div>
-                <div class="flex justify-between">
-                    <span>Expenses:</span>
-                    <span>Loading...</span>
-                </div>
-                <div class="flex justify-between">
-                    <span>Profit:</span>
-                    <span>Loading...</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- My Products -->
-        <h1>My Products</h1>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Status</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($products as $product)
-                    <tr>
-                        <td>{{ $product->id }}</td>
-                        <td>{{ $product->name }}</td>
-                        <td>{{ $product->price }}</td>
-                        <td>{{ $product->status }}</td>
-                        <td>
-                            <a href="{{ route('products.edit', $product->id) }}" class="btn btn-warning">Edit</a>
-                            <form action="{{ route('products.delete', $product->id) }}" method="POST" style="display:inline;">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Delete</button>
-                            </form>
-                        </td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
     </div>
+    <div class="col-md-4">
+        <div class="card text-white bg-success">
+            <div class="card-body">
+                <h5 class="card-title">Sold Products</h5>
+                <p class="card-text display-4">{{ $soldProducts ?? 0 }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-white bg-info">
+            <div class="card-body">
+                <h5 class="card-title">Earnings</h5>
+                <p class="card-text display-4">${{ $earnings ?? 0 }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+                <!-- Products Section -->
+                <h2>My Products</h2>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Category</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+        @foreach ($products as $product)
+        <tr>
+            <td>{{ $product->name }}</td>
+            <td>{{ $product->category }}</td>
+            <td>{{ $product->quantity }} {{ $product->unit }}</td>
+            <td>${{ $product->price }}</td>
+            <td>{{ $product->status }}</td>
+        </tr>
+        @endforeach
+    </tbody>
+                </table>
+            </main>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-+

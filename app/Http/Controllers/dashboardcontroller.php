@@ -1,8 +1,9 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Product;
+use App\Models\Product_listings;  // Hindura aha ku Product_listing
 use App\Models\Order;
 use App\Models\User;
 
@@ -10,16 +11,18 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $products_count = Product::count();
+        
+        $products_count = Product_listings::count();  // Hindura Product kuba Product_listing
         $orders_count = Order::count();
         $users_count = User::count();
 
-        return view('dashboard.index', compact('products_count', 'orders_count', 'users_count'));
+        return view('/', compact('products_count', 'orders_count', 'users_count'));
     }
 
     public function dashbord()
     {
-        $products = Product::all();
+        // Hindura Product::all() kuba Product_listing::all()
+        $products = Product_listings::all(); // Hindura Product kuba Product_listing
         $products_count = $products->count();
         dd($products_count); // Debugging line
         return view('dashboard', compact('products', 'products_count'));
@@ -37,4 +40,3 @@ class DashboardController extends Controller
         return view('dashboard.users', compact('users'));
     }
 }
-

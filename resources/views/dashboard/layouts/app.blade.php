@@ -12,6 +12,7 @@
         <!-- Sidebar -->
         <div class="w-1/4 bg-gray-800 text-white h-screen">
             <div class="p-6">
+                
                 <h2 class="text-2xl font-semibold">Marketplace</h2>
                 <ul class="mt-4">
                     <li><a href="{{ route('farmer.dashboard') }}">Farmer Dashboard</a></li>

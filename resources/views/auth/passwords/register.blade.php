@@ -33,13 +33,11 @@
     @if(session('success'))
     <div>{{ session('success') }}</div>
 @endif
-</div>
-<div class="">
     @if(session('fail'))
     <div>{{ session('fail') }}</div>
 @endif
 </div>
-    <form action="{{route('register')}}" method="post">
+    <form action="{{ route('register.store') }}" method="POST">
     @csrf
         <div class="card">
             <div class="text-center mb-5">
@@ -54,6 +52,10 @@
                 <div class="form-group">
                     <label class="form-label">lastname</label>
                     <input type="text" value="{{ old('lastname')}}" class="form-control" placeholder="Enter name" name="lastname">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">phone</label>
+                    <input type="number" value="" class="form-control" placeholder="Enter phone" name="phone">
                 </div>
                 <div class="form-group">
         <label for="role">Role</label>

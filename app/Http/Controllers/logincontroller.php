@@ -19,11 +19,20 @@ class logincontroller extends Controller
 
     if (Auth::attempt($credentials)) {
         // Authentication passed...
-        return redirect()->intended('/dashboard');
+        return redirect()->intended('/farmer');
     }
 
     return back()->withErrors([
         'email' => 'The provided credentials do not match our records.',
     ]);
+}
+
+protected function authenticated(Request $request, $user)
+{
+    if ($user->role === 'farmer') {
+        return redirect('/farmer')->route('farmer.dashboard');
+    }
+
+    return redirect()->route('home');
 }
 }
